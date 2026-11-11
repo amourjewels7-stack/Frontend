@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tax Invoice — Amour Jewels</title>
+<meta name="description" content="GST tax invoice for your Amour Jewels order.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%231A1712'/%3E%3Ctext x='32' y='44' font-family='Fraunces,Georgia,serif' font-size='34' fill='%23FFFFFF' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=20261029">
+<link rel="stylesheet" href="css/theme-atelier.css?v=20260923">
+<style>
+body{background:var(--sand)}
+.inv-wrap{max-width:860px;margin:40px auto;padding:0 20px}
+.inv{background:var(--cream);border:1px solid var(--line);padding:44px 48px;font-size:13px;color:var(--cocoa)}
+.inv-head{display:flex;justify-content:space-between;gap:20px;border-bottom:1px solid var(--espresso);padding-bottom:18px}
+.inv-brand .f-logo{font-size:26px;letter-spacing:.3em;color:var(--espresso)}
+.inv-brand .f-sub{font:500 9px/1 var(--sans);letter-spacing:.5em;text-transform:uppercase;color:var(--gold-deep);margin-top:4px}
+.inv-head p{margin-top:12px;color:var(--taupe);line-height:1.6}
+.inv-title{text-align:right}
+.inv-title h1{font-size:22px;font-weight:500;letter-spacing:.06em;text-transform:uppercase}
+.inv-title p{color:var(--taupe);font-size:12px;margin-top:6px}
+.inv-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 40px;padding:20px 0;border-bottom:1px solid var(--line-soft)}
+.inv-grid h4{font:500 10px/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--taupe);margin-bottom:8px}
+.inv-grid p{line-height:1.65}
+.inv table{width:100%;border-collapse:collapse;margin-top:22px}
+.inv th{font:500 10px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--taupe);text-align:left;padding:10px 8px;border-bottom:1px solid var(--line)}
+.inv td{padding:12px 8px;border-bottom:1px solid var(--line-soft);vertical-align:top}
+.inv .num{text-align:right;font-variant-numeric:tabular-nums}
+.inv-tot{margin-top:18px;margin-left:auto;width:280px}
+.inv-tot .srow{display:flex;justify-content:space-between;padding:6px 0;font-size:12.5px}
+.inv-tot .srow.big{border-top:1px solid var(--espresso);margin-top:8px;padding-top:12px;font-size:15px;color:var(--espresso);font-weight:500}
+.inv-decl{margin-top:26px;padding-top:16px;border-top:1px solid var(--line-soft);color:var(--taupe);font-size:11.5px;line-height:1.7}
+.inv-actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:26px 0 60px}
+@media print{
+  body{background:var(--cream)}
+  .inv-wrap{margin:0;max-width:none;padding:0}
+  .inv{border:0;padding:0}
+  .inv-actions,.site-header,.announce{display:none!important}
+}
+@media(max-width:640px){.inv{padding:26px 20px}.inv-grid{grid-template-columns:1fr}}
+</style>
+<script src="js/error-boundary.js?v=20261027"></script>
+</head>
+<body>
+
+<header class="site-header" id="siteHeader" style="display:none"></header>
+
+<div class="inv-wrap">
+  <div class="inv" id="invRoot">
+    <div class="inv-head">
+      <div class="inv-brand">
+        <div class="f-logo">AMOUR</div>
+        <div class="f-sub">Jewels · India</div>
+        <p><b>Amour Jewels Retail LLP</b><br>India<br>GSTIN: <b>08AAGCA1234K1ZP</b> · PAN: AAGCA1234K<br>amourjewelsretail@gmail.com · +91 9009055502</p>
+      </div>
+      <div class="inv-title">
+        <h1>Tax Invoice</h1>
+        <p>Invoice No: <b id="invNo">—</b><br>Date: <b id="invDate">—</b><br>Reverse charge: No<br>Place of supply: <b id="invPos">—</b></p>
+      </div>
+    </div>
+    <div class="inv-grid">
+      <div><h4>Billed to</h4><p id="invBuyer">—</p></div>
+      <div><h4>Shipped to</h4><p id="invShip">—</p></div>
+    </div>
+    <table>
+      <thead><tr><th>#</th><th>Item</th><th>HSN</th><th style="text-align:right">Qty</th><th style="text-align:right">Taxable</th><th style="text-align:right">GST</th><th style="text-align:right">Amount</th></tr></thead>
+      <tbody id="invRows"></tbody>
+    </table>
+    <div class="inv-tot" id="invTots"></div>
+    <div class="inv-decl">
+      <p><b>Declaration:</b> We declare that this invoice shows the actual price of the goods described and that all particulars are true and correct. Prices are inclusive of GST where applicable. This is a computer-generated invoice and does not require a physical signature.</p>
+      <p style="margin-top:8px">For <b>Amour Jewels Retail LLP</b> — Authorised Signatory</p>
+    </div>
+  </div>
+  <div class="inv-actions">
+    <button class="btn" id="invPrint">Print / Save as PDF</button>
+    <a class="btn ghost" href="track.html">Back to Tracking</a>
+    <a class="btn ghost" href="index.html">AmourJewels.in</a>
+  </div>
+  <p style="text-align:center;margin:-34px 0 40px"></p>
+</div>
+
+<script defer src="js/api.js?v=20261107"></script>
+  <script src="js/products.js?v=20261107" defer></script>
+<script src="js/store-config.js?v=20261107" defer></script>
+<script src="js/analytics.js?v=20261008" defer></script>
+<script src="js/currency.js?v=20261013" defer></script>
+<script src="js/main.js?v=20261107" defer></script>
+<script src="js/shop-dropdown.js?v=20261107" defer></script>
+<script src="js/invoice.js?v=20261107" defer></script>
+</body>
+</html>

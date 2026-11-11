@@ -1,0 +1,632 @@
+[
+  {
+    "sku": "AJ-NK-040",
+    "title": "Mehrunisa Necklace Set",
+    "description": "A timeless treasure, crafted for moments that deserve to be remembered. Includes necklace &amp; a pair of earrings. Discover the art of adornment with Amour Jewels.",
+    "price": 33700,
+    "compareAtPrice": 33700,
+    "stockQuantity": 10,
+    "category": "Necklaces",
+    "imageUrls": [
+      "https://amourjewels.in/images/mehrunisa-necklace-set-1.jpg",
+      "https://amourjewels.in/images/mehrunisa-necklace-set-2.jpg"
+    ],
+    "featured": false,
+    "active": true,
+    "attributes": {
+      "slug": "mehrunisa-necklace-set",
+      "cats": [
+        "necklaces"
+      ],
+      "collection": "new",
+      "tag": "New",
+      "details": [
+        "Includes: necklace &amp; pair of earrings",
+        "Hand-set kundan-style stones in ruby, sapphire and emerald tones",
+        "Pearl and green onyx-style drops for a regal bridal finish",
+        "Presented in the signature Amour keepsake box"
+      ]
+    }
+  },
+  {
+    "sku": "AJ-EA-040",
+    "title": "Sunehri Statement Ear Chains",
+    "description": "8 layers of pure elegance. Style tip: pair them with a sleek bun or a traditional braid for an effortlessly royal look.",
+    "price": 7999,
+    "compareAtPrice": 7999,
+    "stockQuantity": 10,
+    "category": "Earrings",
+    "imageUrls": [
+      "https://amourjewels.in/images/sunehri-ear-chains-1.jpg",
+      "https://amourjewels.in/images/sunehri-ear-chains-2.jpg"
+    ],
+    "featured": false,
+    "active": true,
+    "attributes": {
+      "slug": "sunehri-statement-ear-chains",
+      "cats": [
+        "earrings",
+        "hair"
+      ],
+      "collection": "new",
+      "tag": "New",
+      "details": [
+        "8 layers of pearls and beaded drops in a single statement piece",
+        "Pairs with a sleek bun or a traditional braid",
+        "Handcrafted in gold-tone finish with pearl and green bead detailing",
+        "Presented in the signature Amour keepsake box"
+      ]
+    }
+  },
+  {
+    "sku": "AJ-HR-040",
+    "title": "Noor Maang Tika",
+    "description": "A statement showstopper maang tika. Because some jewels are made to steal the spotlight.",
+    "price": 8900,
+    "compareAtPrice": 8900,
+    "stockQuantity": 10,
+    "category": "Hair Accessories",
+    "imageUrls": [
+      "https://amourjewels.in/images/noor-maang-tika-1.jpg",
+      "https://amourjewels.in/images/noor-maang-tika-2.jpg"
+    ],
+    "featured": false,
+    "active": true,
+    "attributes": {
+      "slug": "noor-maang-tika",
+      "cats": [
+        "hair"
+      ],
+      "collection": "new",
+      "tag": "New",
+      "details": [
+        "Statement maang tika with pearl and kundan detailing",
+        "Handcrafted in gold-tone finish with jade-green and ruby accents",
+        "Presented in the signature Amour keepsake box"
+      ]
+    }
+  },
+  {
+    "sku": "AJ-NK-011",
+    "title": "Rajwada Antique Choker Set",
+    "description": "A museum-grade reproduction of a 1940s bridal choker, hand-cast in antique gold and set with ruby-red crystal drops. Comes with matching stud earrings.",
+    "price": 12450,
+    "compareAtPrice": 15950,
+    "stockQuantity": 10,
+    "category": "Necklaces",
+    "imageUrls": [
+      "https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1633934542430-0905ccb5f050?auto=format&fit=crop&w=900&q=80"
+    ],
+    "featured": true,
+    "active": true,
+    "attributes": {
+      "slug": "rajwada-antique-choker-set",
+      "cats": [
+        "necklaces"
+      ],
+      "collection": "bridal",
+      "tag": "Bestseller",
+      "details": [
+        "Brass core, finished in 2-micron antique gold plating",
+        "Hand-set ruby crystal stones with pearl drop detailing",
+        "Adjustable cotton dori — fits 12″ to 14″ neck circumference",
+        "Set weight approx. 96 g · nickel-free &amp; lead-free",
+        "Presented in the signature Amour keepsake box"
+      ]
+    }
+  },
+  {
+    "sku": "AJ-NK-024",
+    "title": "Chandra Layered Pendant Necklace",
+    "description": "Two strands, one story — a faceted london-blue topaz sits above a hand-set crescent, strung on a delicate 18k-vermeil chain. Designed to sit beautifully over kurtas and linen alike.",
+    "price": 4850,
+    "compareAtPrice": 6200,
+    "stockQuantity": 10,
+    "category": "Necklaces",
+    "imageUrls": [
+      "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1599459183200-59c7687a0275?auto=format&fit=crop&w=900&q=80"
+    ],
+    "featured": false,
+    "active": true,
+    "attributes": {
+      "slug": "chandra-layered-necklace",
+      "cats": [
+        "necklaces",
+        "everyday"
+      ],
+      "collection": "new",
+      "tag": "New",
+      "details": [
+        "92.5 sterling silver, plated in 1-micron 18k gold vermeil",
+        "Faceted london blue topaz + white sapphire crescent",
+        "Adjustable slider — wears 16″ to 18″",
+        "Layered strands pre-joined; no tangling",
+        "Weight approx. 9 g"
+      ]
+    }
+  },
+  {
+    "sku": "AJ-PR-007",
+    "title": "Moti Classic Pearl Strand",
+    "description": "Hand-knotted freshwater pearls with a crystal-rondelle clasp — the strand your grandmother wore, reimagined at a length that layers as easily as it stands alone.",
+    "price": 5800,
+    "compareAtPrice": 7400,
+    "stockQuantity": 10,
+    "category": "Pearls",
+    "imageUrls": [
+      "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1611085583191-a3b181a88401?auto=format&fit=crop&w=900&q=80"
+    ],
+    "featured": false,
+    "active": true,
+    "attributes": {
+      "slug": "moti-classic-pearl-strand",
+      "cats": [
+        "pearls",
+        "necklaces"
+      ],
+      "collection": "core",
+      "details": [
+        "Freshwater button pearls, 8–9 mm, hand-knotted on silk cord",
+        "Crystal-rondelle clasp in 18k gold vermeil",
+        "Standard 18″ length · custom lengths on request",
+        "Each strand unique in lustre and shape",
+        "Comes with pearl-care card and pouch"
+      ]
+    }
+  },
+  {
+    "sku": "AJ-RG-019",
+    "title": "Aaroha Halo Solitaire Ring",
+    "description": "A 1.1 ct moissanite solitaire framed by a milgrain halo, set on a split band. The ring that photographs like a proposal — without the diamond invoice.",
+    "price": 8900,
+    "compareAtPrice": 11200,
+    "stockQuantity": 10,
+    "category": "Rings",
+    "imageUrls": [
+      "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=900&q=80"
+    ],
+    "featured": true,
+    "active": true,
+    "attributes": {
+      "slug": "aaroha-halo-solitaire-ring",
+      "cats": [
+        "rings"
+      ],
+      "collection": "bridal",
+      "tag": "Bestseller",
+      "sizes": [
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "details": [
+        "D-colour VVS moissanite centre, 1.1 ct equivalent",
+        "92.5 sterling silver with rose-gold tone halo, rhodium band",
+        "Milgrain hand-engraving on the halo",
+        "Band width 1.8 mm · court profile for comfort",
+        "Includes certificate of authenticity"
+      ]
+    }
+  },
+  {
+    "sku": "AJ-ER-002",
+    "title": "Zoya Chunky Gold Hoops",
+    "description": "Our most-worn pair — sculptural twisted hoops with real weight and a hinge that never snags. Office on Monday, mehendi on Saturday.",
+    "price": 3450,
+    "compareAtPrice": 4200,
+    "stockQuantity": 10,
+    "category": "Earrings",
+    "imageUrls": [
+      "https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=900&q=80"
+    ],
+    "featured": true,
+    "active": true,
+    "attributes": {
+      "slug": "zoya-chunky-hoops",
+      "cats": [
+        "earrings",
+        "everyday"
+      ],
+      "collection": "core",
+      "tag": "Bestseller",
+      "details": [
+        "Brass core, plated in 2-micron 18k gold",
+        "Twisted rope silhouette, high-polish finish",
+        "Secure hinge closure — no fiddly butterfly backs",
+        "Medium: 24 mm diameter · weight 7 g per pair",
+        "Hypoallergenic posts; safe for sensitive ears"
+      ]
+    }
+  },
+  {
+    "sku": "AJ-ER-014",
+    "title": "Maya Twist Hoops",
+    "description": "A softer, smaller take on the Zoya — rose-gold warmth that flatters every skin tone and disappears into your ears-by-7pm routine.",
+    "price": 2980,
+    "compareAtPrice": 3800,
+    "stockQuantity": 10,
+    "category": "Earrings",
+    "imageUrls": [
+      "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=900&q=80"
+    ],
+    "featured": false,
+    "active": true,
+    "attributes": {
+      "slug": "maya-twist-hoops",
+      "cats": [
+        "earrings",
+        "everyday"
+      ],
+      "collection": "new",
+      "tag": "New",
+      "details": [
+        "Brass core, rose-gold toned 18k plating",
+        "Petite: 18 mm diameter · weight 5 g per pair",
+        "Hinge closure, water-resistant finish",
+        "Hand-buffed for a mirror shine",
+        "Nickel-free"
+      ]
+    }
+  },
+  {
+    "sku": "AJ-ER-021",
+    "title": "Nilaa Statement Drop Earrings",
+    "description": "Victorian arcs in oxidised silver with a sapphire-blue teardrop centre — the pair that carries a plain saree all the way to the front row.",
+    "price": 5200,
+    "compareAtPrice": 6800,
+    "stockQuantity": 10,
+    "category": "Earrings",
+    "imageUrls": [
+      "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1512163143273-bde0e3cc7407?auto=format&fit=crop&w=900&q=80"
+    ],
+    "featured": false,
+    "active": true,
+    "attributes": {
+      "slug": "nilaa-statement-earrings",
+      "cats": [
+        "earrings"
+      ],
+      "collection": "new",
+      "tag": "New",
+      "details": [
+        "Oxidised 92.5 sterling silver",
+        "Sapphire crystal teardrop with opal glass accents",
+        "Length 64 mm · weight 12 g per piece",
+        "Comfort posts with silicone stabilisers",
+        "Limited batch of 80 pieces"
+      ]
+    }
+  },
+  {
+    "sku": "AJ-ER-033",
+    "title": "Falak Crystal Heart Drops",
+    "description": "Austrian-cut crystal hearts on feather-light hooks — the under-₹2.5k pair our DMs are full of. Gift-boxed as standard.",
+    "price": 2350,
+    "compareAtPrice": 2900,
+    "stockQuantity": 10,
+    "category": "Earrings",
+    "imageUrls": [
+      "https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1608042314453-ae338d80c427?auto=format&fit=crop&w=900&q=80"
+    ],
+    "featured": false,
+    "active": true,
+    "attributes": {
+      "slug": "falak-crystal-heart-drops",
+      "cats": [
+        "earrings",
+        "everyday"
+      ],
+      "collection": "core",
+      "details": [
+        "Gold-tone brass hooks, Austrian-cut crystal hearts",
+        "Length 34 mm · weight 3 g per piece",
+        "Hypoallergenic hook wire",
+        "Arrives gift-ready — no wrapping needed",
+        "Also loved as a bridesmaid present"
+      ]
+    }
+  },
+  {
+    "sku": "AJ-NK-018",
+    "title": "Sitaara Layered Chain Set",
+    "description": "Three chains, one clasp — bead, cable and rolo strands finished with a star-charmed drop. The layering look, minus the layering work.",
+    "price": 4250,
+    "compareAtPrice": 5400,
+    "stockQuantity": 10,
+    "category": "Necklaces",
+    "imageUrls": [
+      "https://images.unsplash.com/photo-1601821765780-754fa98637c1?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?auto=format&fit=crop&w=900&q=80"
+    ],
+    "featured": true,
+    "active": true,
+    "attributes": {
+      "slug": "sitara-layered-chain-set",
+      "cats": [
+        "necklaces",
+        "everyday"
+      ],
+      "collection": "core",
+      "tag": "Bestseller",
+      "details": [
+        "92.5 sterling silver, 1-micron 18k gold vermeil",
+        "Three graduated strands (14″, 16″, 18″) on a single clasp",
+        "Star charm drop with white sapphire",
+        "Weight 11 g · tangle-free design",
+        "Water-resistant finish"
+      ]
+    }
+  },
+  {
+    "sku": "AJ-BR-009",
+    "title": "Sona Pavé Kada",
+    "description": "A hand-pavé kada in warm champagne gold — 212 stones set face by face. Worn in stacks of one.",
+    "price": 9400,
+    "compareAtPrice": 12500,
+    "stockQuantity": 10,
+    "category": "Bracelets",
+    "imageUrls": [
+      "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?auto=format&fit=crop&w=900&q=80"
+    ],
+    "featured": true,
+    "active": true,
+    "attributes": {
+      "slug": "sona-pave-kada",
+      "cats": [
+        "bracelets"
+      ],
+      "collection": "bridal",
+      "tag": "Bestseller",
+      "sizes": [
+        "2.4",
+        "2.6",
+        "2.8"
+      ],
+      "details": [
+        "Brass core, champagne-gold 2-micron plating",
+        "212 hand-set cubic zirconia in a paisley flow",
+        "Screw-open hinge with safety clasp",
+        "Choose bangle size at checkout (2.4 / 2.6 / 2.8)",
+        "Sold as a single kada; pair for the full look"
+      ]
+    }
+  },
+  {
+    "sku": "AJ-BR-017",
+    "title": "Vera Curb Chain Bracelet",
+    "description": "A chunky curb-link chain that reads solid gold in every mirror. Unisex, weighty, zero-maintenance.",
+    "price": 3900,
+    "compareAtPrice": 4900,
+    "stockQuantity": 10,
+    "category": "Bracelets",
+    "imageUrls": [
+      "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?auto=format&fit=crop&w=900&q=80"
+    ],
+    "featured": false,
+    "active": true,
+    "attributes": {
+      "slug": "vera-curb-chain-bracelet",
+      "cats": [
+        "bracelets",
+        "everyday"
+      ],
+      "collection": "core",
+      "details": [
+        "Brass core, heavy 18k gold plating (2 micron)",
+        "8 mm curb links, 7.5″ length with 1″ extender",
+        "Lobster clasp, water-resistant finish",
+        "Weight 22 g — substantial but easy",
+        "Unisex styling"
+      ]
+    }
+  },
+  {
+    "sku": "AJ-BR-022",
+    "title": "Tanvi CZ Line Bracelet",
+    "description": "An endless ribbon of rhodium-set zircons — the tennis look for sangeet nights and silver-anniversary dinners alike.",
+    "price": 7200,
+    "compareAtPrice": 9100,
+    "stockQuantity": 10,
+    "category": "Bracelets",
+    "imageUrls": [
+      "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=900&q=80"
+    ],
+    "featured": false,
+    "active": true,
+    "attributes": {
+      "slug": "tanvi-cz-line-bracelet",
+      "cats": [
+        "bracelets"
+      ],
+      "collection": "core",
+      "details": [
+        "92.5 sterling silver, rhodium finish",
+        "3.4 ct total weight in precision-cut CZ",
+        "Double safety clasp — you will not lose this",
+        "Fits 6.5″ to 7.5″ wrists",
+        "Certificate of authenticity included"
+      ]
+    }
+  },
+  {
+    "sku": "AJ-RG-008",
+    "title": "Dhara Stone Stacking Rings",
+    "description": "A trio of stackables — turquoise howlite, coral and a mirrored signet — sold as a set of three. Stack them your way.",
+    "price": 3900,
+    "compareAtPrice": 4700,
+    "stockQuantity": 10,
+    "category": "Rings",
+    "imageUrls": [
+      "https://images.unsplash.com/photo-1608042314453-ae338d80c427?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1596944924616-7b38e7cfac36?auto=format&fit=crop&w=900&q=80"
+    ],
+    "featured": false,
+    "active": true,
+    "attributes": {
+      "slug": "dhara-stacking-rings",
+      "cats": [
+        "rings",
+        "everyday"
+      ],
+      "collection": "new",
+      "tag": "New",
+      "sizes": [
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "details": [
+        "Set of three rings, 18k gold vermeil over 92.5 silver",
+        "Turquoise howlite, red coral composite, gold mirror signet",
+        "Band width 2 mm each · comfortable daily profile",
+        "Mix sizes across the set (mention at checkout)",
+        "Arrives in a three-slot travel case"
+      ]
+    }
+  },
+  {
+    "sku": "AJ-RG-025",
+    "title": "Gulaab Pink Halo Ring",
+    "description": "A rose-tinted zircon cushion framed in pavé — for the bride who wants colour where everyone expects white.",
+    "price": 6900,
+    "compareAtPrice": 8600,
+    "stockQuantity": 10,
+    "category": "Rings",
+    "imageUrls": [
+      "https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=900&q=80"
+    ],
+    "featured": false,
+    "active": true,
+    "attributes": {
+      "slug": "gulaab-halo-ring",
+      "cats": [
+        "rings"
+      ],
+      "collection": "bridal",
+      "sizes": [
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "details": [
+        "Pink moissanite-look cushion centre, 2 ct equivalent",
+        "Rose-gold vermeil halo over 92.5 silver band",
+        "Pavé shoulders with 38 accent stones",
+        "Band width 2 mm · court profile",
+        "Certificate of authenticity included"
+      ]
+    }
+  },
+  {
+    "sku": "AJ-RG-031",
+    "title": "Shubh Pavé Band",
+    "description": "A crossover pavé band in cool rhodium — worn alone by minimalists, stacked by the rest of us.",
+    "price": 5400,
+    "compareAtPrice": 6600,
+    "stockQuantity": 10,
+    "category": "Rings",
+    "imageUrls": [
+      "https://images.unsplash.com/photo-1589674781759-c21c37956a44?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=900&q=80"
+    ],
+    "featured": false,
+    "active": true,
+    "attributes": {
+      "slug": "shubh-pave-band",
+      "cats": [
+        "rings"
+      ],
+      "collection": "core",
+      "sizes": [
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "details": [
+        "92.5 sterling silver, rhodium plated",
+        "Crossover silhouette, 42 channel-set CZ",
+        "Band width 4.5 mm at the crossover",
+        "Sizes 6–9 · free resizing within 30 days",
+        "Hand-finished in India"
+      ]
+    }
+  },
+  {
+    "sku": "AJ-PR-012",
+    "title": "Ira Baroque Pearl Pendant",
+    "description": "One baroque pearl, chosen for its shape, hung on a whisper-thin chain. No two are alike — yours picks you.",
+    "price": 3200,
+    "compareAtPrice": 4100,
+    "stockQuantity": 10,
+    "category": "Pearls",
+    "imageUrls": [
+      "https://images.unsplash.com/photo-1611085583191-a3b181a88401?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=900&q=80"
+    ],
+    "featured": false,
+    "active": true,
+    "attributes": {
+      "slug": "ira-baroque-pearl-pendant",
+      "cats": [
+        "pearls",
+        "necklaces",
+        "everyday"
+      ],
+      "collection": "new",
+      "tag": "New",
+      "details": [
+        "Freshwater baroque pearl, 10–12 mm",
+        "92.5 silver chain in 18k gold vermeil, 16″ + 2″ extender",
+        "Hand-selected lustre; each piece one-of-a-kind",
+        "Weight 4 g — forget-it-is-on comfort",
+        "Pearl care card included"
+      ]
+    }
+  },
+  {
+    "sku": "AJ-NK-029",
+    "title": "Dil Coin Locket Necklace",
+    "description": "A hand-hammered medallion engraved with the word Amour — our founder’s first design, still our most gifted.",
+    "price": 4600,
+    "compareAtPrice": 5900,
+    "stockQuantity": 10,
+    "category": "Necklaces",
+    "imageUrls": [
+      "https://images.unsplash.com/photo-1610694955371-d4a3e0ce4b52?auto=format&fit=crop&w=900&q=80",
+      "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=900&q=80"
+    ],
+    "featured": false,
+    "active": true,
+    "attributes": {
+      "slug": "dil-coin-locket",
+      "cats": [
+        "necklaces",
+        "everyday"
+      ],
+      "collection": "core",
+      "details": [
+        "Hand-hammered brass medallion, 18k gold plating",
+        "‘Amour’ script engraving on the face, motifs on reverse",
+        "16″ chain with 2″ extender, lobster clasp",
+        "Weight 8 g · water-resistant finish",
+        "Free initial engraving on the reverse"
+      ]
+    }
+  }
+]

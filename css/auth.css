@@ -1,0 +1,138 @@
+/* ============================================================
+   AMOUR JEWELS — Login & Register (login.html · register.html)
+   White-and-baby-blue skin (body.auth-dark) + centred auth block.
+   Loads AFTER theme-atelier.css so it can override cleanly.
+   ============================================================ */
+
+/* — 1. the page itself: soft blue-white ground, navy ink — */
+body.auth-dark{background:#edf3f8;color:var(--espresso)}
+body.auth-dark::after{mix-blend-mode:multiply;opacity:.04}   /* paper grain over light */
+
+/* — header: white edition (matches the site-wide nav) — */
+.auth-dark .site-header{box-shadow:0 1px 0 rgba(63,114,142,.22)}
+.auth-dark .header-main{background:#fff;border-bottom:1px solid rgba(63,114,142,.18)}
+.auth-dark .announce{background:var(--gold-soft);color:rgba(14,42,61,.72);border-bottom:1px solid rgba(63,114,142,.18)}
+.auth-dark .main-nav a{color:var(--cocoa)}
+.auth-dark .main-nav a:hover{color:var(--espresso)}
+.auth-dark .main-nav a.active{color:var(--espresso)}
+.auth-dark .logo .word{color:var(--logo-blue)}
+.auth-dark .logo .sub{color:var(--gold)}
+.auth-dark .icon-btn{color:var(--espresso)}
+.auth-dark .icon-btn:hover{color:var(--gold-deep)}
+/* header icons on the baby blue bar — the rules above still cover drawer/search close buttons */
+.auth-dark .header-main .icon-btn{color:var(--espresso)}
+.auth-dark .header-main .icon-btn:hover{color:var(--gold-deep)}
+
+/* — overlays opened from these pages (menu · search · bag · account) — */
+.auth-dark .mobile-nav,.auth-dark .search-panel,.auth-dark .cart-drawer,.auth-dark .acct-drawer{background:#ffffff;color:var(--espresso)}
+.auth-dark .mobile-nav nav a,.auth-dark .search-panel input,.auth-dark .search-row input,
+.auth-dark .cd-head b,.auth-dark .cd-empty p,.auth-dark .cd-item .ci-name,.auth-dark .cd-item .ci-price,
+.auth-dark .cd-sub b,.auth-dark .acct-welcome,.auth-dark .acct-hello p,.auth-dark .acct-card b{color:var(--espresso)}
+.auth-dark .mobile-nav .m-label,.auth-dark .mobile-nav .m-foot,.auth-dark .cd-ship,.auth-dark .cd-note,
+.auth-dark .cd-sub span,.auth-dark .cd-item .ci-meta,.auth-dark .cd-item .ci-remove,
+.auth-dark .cd-continue,.auth-dark .acct-note{color:rgba(14,42,61,.62)}
+.auth-dark .mobile-nav nav a{border-bottom-color:rgba(132,175,208,.25)}
+.auth-dark .cd-head,.auth-dark .cd-item,.auth-dark .cd-foot,.auth-dark .cd-ship{border-color:rgba(132,175,208,.25)}
+.auth-dark .cd-foot,.auth-dark .cd-ship{background:transparent}
+.auth-dark .search-row{border-bottom-color:rgba(132,175,208,.5)}
+.auth-dark .cart-drawer .btn,.auth-dark .acct-drawer .btn{
+  background:linear-gradient(135deg,var(--gold),var(--gold-deep));border-color:var(--gold);color:#fff}
+.auth-dark .acct-input{background:#eff6fa;border-color:rgba(132,175,208,.35);color:var(--espresso)}
+
+/* — 2. centred shell — */
+.auth-main{min-height:76vh;display:flex;align-items:center;justify-content:center;
+  padding:clamp(44px,7vh,80px) 20px clamp(52px,8vh,88px)}
+.auth-shell{width:100%;max-width:460px;text-align:center}
+.auth-head .kicker{color:var(--gold-deep)}
+.auth-head h1{font-family:var(--serif);font-weight:400;font-size:clamp(32px,5vw,44px);
+  color:var(--espresso);margin:16px 0 10px;line-height:1.15}
+.auth-sub{color:rgba(14,42,61,.66);font-size:14.5px;line-height:1.7;max-width:42ch;margin:0 auto 30px}
+
+/* — 3. the block: white panel inside a double baby-blue frame — */
+.auth-box{position:relative;text-align:left;background:#ffffff;
+  border:1px solid rgba(132,175,208,.45);padding:clamp(26px,4.5vw,38px);
+  box-shadow:0 40px 90px -50px rgba(63,114,142,.35)}
+.auth-box::before{content:'';position:absolute;inset:7px;border:1px solid rgba(132,175,208,.25);pointer-events:none}
+
+/* — Email / Phone tabs — */
+.auth-tabs{display:grid;grid-template-columns:1fr 1fr;margin-bottom:26px;
+  border:1px solid rgba(132,175,208,.35)}
+.auth-tab{padding:13px 8px;background:transparent;border:0;cursor:pointer;
+  font:500 11px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(14,42,61,.6);transition:all .3s}
+.auth-tab+.auth-tab{border-left:1px solid rgba(132,175,208,.35)}
+.auth-tab:hover{color:var(--gold-deep)}
+.auth-tab.active{background:rgba(132,175,208,.14);color:var(--gold-deep)}
+
+/* — fields — */
+.a-field{margin-bottom:16px}
+.a-field label{display:block;font:500 10.5px/1 var(--sans);letter-spacing:.22em;
+  text-transform:uppercase;color:var(--gold-deep);margin-bottom:9px}
+.a-field input{width:100%;padding:14px 16px;font-size:14.5px;outline:none;
+  background:#f6fafc;border:1px solid rgba(132,175,208,.35);
+  color:var(--espresso);transition:border-color .3s,background .3s}
+.a-field input::placeholder{color:rgba(14,42,61,.38)}
+.a-field input:focus{border-color:var(--gold);background:#ffffff}
+.a-field input.bad{border-color:#e07a6a}
+.a-field input.otp{text-align:center;letter-spacing:.5em;text-indent:.5em;font-size:19px}
+.auth-err{color:#c0392b;font-size:12.5px;line-height:1.5;margin:-4px 0 14px}
+.auth-err[hidden]{display:none}
+.auth-fine{font-size:12px;line-height:1.6;color:rgba(14,42,61,.58);margin-top:12px}
+
+/* — primary baby-blue button — */
+.auth-box .btn{width:100%;background:linear-gradient(135deg,var(--gold),var(--gold-deep));
+  border:1px solid var(--gold-deep);color:#fff;font-weight:700;
+  box-shadow:0 14px 30px -16px rgba(63,114,142,.5);transition:all .3s var(--ease)}
+.auth-box .btn:hover{filter:brightness(1.06);transform:translateY(-1px);color:#fff}
+.auth-box .btn.wide{width:100%}
+.auth-box .btn.ghost{background:transparent;color:var(--gold-deep);border:1px solid rgba(132,175,208,.55);box-shadow:none}
+.auth-box .btn.ghost:hover{background:rgba(132,175,208,.12);color:var(--gold-deep);border-color:var(--gold-deep);transform:none;filter:none}
+
+/* — "or" divider + OAuth — */
+.auth-or{display:flex;align-items:center;gap:14px;margin:24px 0 16px;
+  font:500 10px/1 var(--sans);letter-spacing:.26em;text-transform:uppercase;color:rgba(14,42,61,.52)}
+.auth-or::before,.auth-or::after{content:'';flex:1;height:1px;background:rgba(132,175,208,.35)}
+.auth-btn-box{display:flex;justify-content:center;min-height:44px;overflow:hidden}
+
+/* — status line — */
+.auth-msg{font-size:12.5px;line-height:1.6;padding:11px 14px;margin-top:16px;text-align:center;
+  border:1px solid rgba(132,175,208,.35);background:#eff6fa;color:rgba(14,42,61,.78)}
+.auth-msg.bad{border-color:rgba(224,122,106,.55);background:rgba(224,122,106,.08);color:#c0392b}
+.auth-msg.note{border-style:dashed;border-color:rgba(132,175,208,.5);color:var(--gold-deep)}
+.auth-msg[hidden]{display:none}
+
+/* — cross-link + terms + back — */
+.auth-switch{text-align:center;font-size:14.5px;color:rgba(14,42,61,.78);margin-top:22px}
+.auth-switch a{color:var(--gold-deep);font-weight:600;text-underline-offset:3px}
+.auth-switch a:hover{text-decoration:underline}
+.auth-terms{text-align:center;font-size:11.5px;line-height:1.7;color:rgba(14,42,61,.5);margin-top:14px}
+.auth-terms a{color:rgba(14,42,61,.72);text-decoration:underline;text-underline-offset:3px}
+.au-back{display:block;width:100%;margin-top:14px;background:none;border:0;cursor:pointer;
+  font:500 11px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;
+  color:rgba(14,42,61,.58);text-decoration:underline;text-underline-offset:4px}
+.au-back:hover{color:var(--gold-deep)}
+
+/* — signed-in panel — */
+.auth-done{text-align:center;padding:6px 2px}
+.auth-ava{width:72px;height:72px;border-radius:var(--r-pill);overflow:hidden;margin:0 auto 16px;
+  background:rgba(132,175,208,.14);border:1px solid rgba(132,175,208,.5);color:var(--gold-deep);
+  display:flex;align-items:center;justify-content:center;font:500 22px/1 var(--sans)}
+.auth-ava img{width:100%;height:100%;object-fit:cover}
+.auth-done h3{font-family:var(--serif);font-weight:400;font-size:26px;color:var(--espresso)}
+.auth-done .em{font-size:14.5px;color:rgba(14,42,61,.68);margin:7px 0 24px;word-break:break-all}
+.auth-done .btn{width:100%}
+.auth-out{margin-top:18px;background:none;border:0;cursor:pointer;
+  font:500 11px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(14,42,61,.58);text-decoration:underline;text-underline-offset:4px}
+.auth-out:hover{color:#c0392b}
+
+/* — privacy footnote — */
+.auth-foot{margin:22px auto 0;max-width:44ch;font-size:12px;line-height:1.7;color:rgba(14,42,61,.55)}
+.auth-foot b{color:var(--gold-deep);font-weight:600;letter-spacing:.08em}
+.auth-foot a{color:var(--gold-deep);text-underline-offset:3px}
+
+@media(max-width:520px){
+  .auth-main{padding:36px 16px 56px}
+  .auth-head h1{font-size:30px}
+}
+

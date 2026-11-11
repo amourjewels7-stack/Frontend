@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout — Amour Jewels</title>
+<meta name="description" content="Secure checkout — insured shipping across India, easy returns.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%231A1712'/%3E%3Ctext x='32' y='44' font-family='Fraunces,Georgia,serif' font-size='34' fill='%23FFFFFF' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=20261029">
+<link rel="stylesheet" href="css/theme-atelier.css?v=20260923">
+<script src="js/error-boundary.js?v=20261027"></script>
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+  <div class="announce" aria-hidden="true">
+    <div class="announce-track">
+      <span>Festive Edit'26 - Now Live</span>
+      <span>Complimentary Shipping On All Orders Above 2000/-</span>
+      <span>Premium Handcrafted Jewels - Amour Atelier</span>
+      <span>Book Video Call Appointments For Your Selections</span>
+      <span>Festive Edit'26 - Now Live</span>
+      <span>Complimentary Shipping On All Orders Above 2000/-</span>
+      <span>Premium Handcrafted Jewels - Amour Atelier</span>
+      <span>Book Video Call Appointments For Your Selections</span>
+    </div>
+  </div>
+  <div class="header-main">
+    <button class="icon-btn nav-toggle" id="navToggle" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+    </button>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="shop.html?collection=new">New Arrivals</a>
+      <a href="shop.html?collection=bestsellers">Best Sellers</a>
+      <a href="shop.html?collection=spotted">Spotted</a>
+      <a href="about.html">Our Story</a>
+      <span class="nav-drop" id="navDrop"><a href="shop.html" class="nav-cta" id="shopBtn" aria-label="Shop All categories">SHOP ALL</a><div class="shop-dropdown" id="shopDropdown" hidden><div class="dd-header"><h3 id="ddHeading">All Jewellery</h3><button class="dd-close" id="ddClose" aria-label="Close categories">x</button></div><div class="dd-categories" id="ddCategories"></div><div class="dd-list" id="ddList"></div></div></span>
+    </nav>
+    <a class="logo" href="index.html" aria-label="Amour Jewels — home">
+      <img class="logo-mark" src="images/logo-mark.png" alt="Amour crest" width="343" height="363">
+      <img class="logo-word" src="images/logo-word.png" alt="Amour Jewels" width="343" height="141">
+    </a>
+    <div class="header-actions">
+
+      <button class="icon-btn" id="searchToggle" aria-label="Search">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      </button>
+      <button class="icon-btn" data-account aria-label="Account">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c1.5-3.5 4.5-5 8-5s6.5 1.5 8 5"/></svg>
+      </button>
+      <button class="icon-btn" id="bagBtn" aria-label="Shopping bag">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M6 8h12l1 12a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1L6 8z"/><path d="M9 10V6a3 3 0 0 1 6 0v4"/></svg>
+        <span class="badge-count" id="bagCount">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="overlay" id="pageOverlay"></div>
+
+<aside class="mobile-nav" id="mobileNav" aria-label="Mobile menu">
+  <div class="top">
+    <span class="m-logo">AMOUR</span>
+    <button class="icon-btn" id="navClose" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="shop.html?collection=new">New Arrivals</a>
+    <a href="shop.html?collection=bestsellers">Best Sellers</a>
+    <a href="shop.html?collection=spotted">Spotted</a>
+    <a href="about.html">Our Story</a>
+    <a href="shop.html" class="nav-cta">SHOP ALL</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <p class="m-label">Categories</p>
+  <div class="m-cats">
+    <a href="shop.html">All Jewellery</a>
+    <a href="shop.html?cat=hand">Hand Accessories</a>
+    <a href="shop.html?cat=necklaces">Necklaces | Chokers</a>
+    <a href="shop.html?cat=earrings">Earrings</a>
+    <a href="shop.html?cat=bracelets">Bangles | Kadas</a>
+    <a href="shop.html?cat=hair">Hair Accessories</a>
+    <a href="shop.html?cat=groom">Groom's Jewellery</a>
+    <a href="shop.html?cat=brooches">Brooches & Kalangi</a>
+    <a href="shop.html?cat=diamond">Diamond Jewellery</a>
+  </div>
+  <p class="m-foot">amourjewelsretail@gmail.com<br>+91 9009055502 · Mon–Sat, 11–8 IST</p>
+</aside>
+
+<div class="search-panel" id="searchPanel">
+  <div class="container">
+    <div class="search-row">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input type="text" id="searchInput" placeholder="Search earrings, necklaces, hathphool, earchains…" autocomplete="off">
+      <button class="icon-btn" id="searchClose" aria-label="Close search">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <div class="search-hint">Popular: <button data-q="ring">Rings</button><button data-q="hathphool">Hathphool</button><button data-q="bridal">Bridal Sets</button><button data-q="kada">Kadas</button><button data-q="choker">Choker</button></div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
+</div>
+
+<aside class="cart-drawer" id="cartDrawer" aria-label="Shopping bag">
+  <div class="cd-head">
+    <b>Your Bag <span id="cdCount"></span></b>
+    <button class="icon-btn" id="cdClose" aria-label="Close bag">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <div class="cd-ship" id="cdShip"></div>
+  <div class="cd-items" id="cdItems"></div>
+  <div class="cd-foot" id="cdFoot">
+    <div class="cd-sub"><span>Subtotal</span><b id="cdSubtotal">₹0</b></div>
+    <p class="cd-note">Shipping &amp; taxes calculated at checkout</p>
+    <a class="btn wide" href="cart.html">View Bag &amp; Checkout</a>
+    <button class="cd-continue" id="cdContinue">Continue shopping</button>
+  </div>
+</aside>
+
+<main>
+  <div class="page-banner">
+    <div class="container">
+      <p class="crumbs"><a href="index.html">Home</a> &nbsp;/&nbsp; <a href="cart.html">Your Bag</a> &nbsp;/&nbsp; <span>Checkout</span></p>
+      <h1>Secure Checkout</h1>
+      <p class="lede">Insured shipping across India · Secure prepaid checkout · Easy returns.</p>
+    </div>
+  </div>
+
+  <div class="container checkout-page">
+    <div class="checkout-grid">
+      <div class="bento">
+        <div class="step-tabs">
+          <div class="step-tab active" data-step-tab="1"><span class="dot">1</span> Address</div>
+          <span class="step-tab"><span class="bar"></span></span>
+          <div class="step-tab" data-step-tab="2"><span class="dot">2</span> Payment</div>
+          <span class="step-tab"><span class="bar"></span></span>
+          <div class="step-tab" data-step-tab="3"><span class="dot">3</span> Done</div>
+        </div>
+
+        <!-- STEP 1 — delivery address -->
+        <div id="cxStep1">
+          <h3>Delivery Address</h3>
+          <p class="sub-hint">Where should we send your sparkle?</p>
+          <form id="cxAddressForm" novalidate>
+            <div class="f-grid">
+              <div class="field full">
+                <label for="cxName">Full name</label>
+                <input id="cxName" name="name" type="text" autocomplete="name" required>
+                <p class="err">Please enter your full name.</p>
+              </div>
+              <div class="field">
+                <label for="cxPhone">Phone</label>
+                <input id="cxPhone" name="phone" type="tel" inputmode="numeric" maxlength="10" autocomplete="tel" required>
+                <p class="err">Enter a valid 10-digit phone number.</p>
+              </div>
+              <div class="field full">
+                <label for="cxAddress">Address (house no, street, area)</label>
+                <input id="cxAddress" name="address" type="text" autocomplete="street-address" required>
+                <p class="err">Please enter your street address.</p>
+              </div>
+              <div class="field full">
+                <label for="cxLandmark">Landmark (optional)</label>
+                <input id="cxLandmark" name="landmark" type="text">
+              </div>
+              <div class="field">
+                <label for="cxPincode">Pincode</label>
+                <input id="cxPincode" name="pincode" type="text" inputmode="numeric" maxlength="6" autocomplete="postal-code" required>
+                <p class="err">Enter a valid 6-digit pincode.</p>
+                <div class="ship-widget" id="cxShipBox" hidden></div>
+              </div>
+              <div class="field">
+                <label for="cxCity">City</label>
+                <input id="cxCity" name="city" type="text" autocomplete="address-level2" required>
+                <p class="err">Please enter your city.</p>
+              </div>
+              <div class="field full">
+                <label for="cxState">State</label>
+                <input id="cxState" name="state" type="text" autocomplete="address-level1" placeholder="Your state" required>
+                <p class="err">Please enter your state.</p>
+              </div>
+            </div>
+            <div class="checkout-actions">
+              <button class="btn" type="submit">Deliver Here</button>
+              <a class="link-back" href="cart.html">← Back to bag</a>
+            </div>
+          </form>
+        </div>
+
+        <!-- STEP 2 — shipping & payment -->
+        <div id="cxStep2" hidden>
+          <h3>Shipping &amp; Payment</h3>
+          <p class="sub-hint">Review delivery, add a code if you have one, then pay securely.</p>
+          <form id="cxPayForm" novalidate>
+            <p class="opt-label" style="margin:0 0 10px;font-weight:500">Delivery</p>
+            <div class="pay-opt" style="cursor:default">
+              <b>Standard — insured &amp; tracked</b><span id="cxStdRate">3–6 days · FREE from <span data-store-money="freeShip">₹2,000</span>, otherwise ₹100</span>
+            </div>
+            <p class="opt-label" style="margin:18px 0 10px;font-weight:500">Coupon / Gift card</p>
+            <div class="coupon-row" id="cxCodeRow">
+              <input id="cxCode" type="text" placeholder="Enter your code" autocomplete="off" style="text-transform:uppercase">
+              <button type="button" class="btn ghost" id="cxApply">Apply</button>
+            </div>
+            <div class="coupon-applied" id="cxApplied" hidden></div>
+            <p class="opt-label" style="margin:18px 0 10px;font-weight:500">Payment</p>
+            <div class="pay-opt" style="cursor:default">
+              <b>Pay securely with Razorpay</b><span>UPI · Cards · NetBanking · Wallets — you choose on the next screen</span>
+            </div>
+            <div class="checkout-actions">
+              <button class="btn gold" type="submit" id="cxPayNow">Pay Securely</button>
+              <button class="link-back" type="button" id="cxBackToAddress">← Change address</button>
+            </div>
+            <p class="secure-note">
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><rect x="5" y="10" width="14" height="10" rx="1.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+              256-bit SSL · PCI-DSS compliant gateway · we never store card details
+            </p>
+          </form>
+        </div>
+
+        <!-- STEP 3 — success -->
+        <div id="cxStep3" class="success-wrap" hidden>
+          <svg class="success-ring" viewBox="0 0 120 120">
+            <circle cx="60" cy="60" r="50"/>
+            <path d="M40 62l14 14 26-30"/>
+          </svg>
+          <h2>Order Placed!</h2>
+          <p>Thank you, <span id="cxSuccessName">friend</span> — your jewellery is being hand-finished and packed at the Amour atelier.</p>
+          <p class="order-id" id="cxOrderId"></p>
+          <div class="checkout-actions" style="justify-content:center">
+            <a class="btn" href="shop.html">Continue Shopping</a>
+            <a class="btn ghost" id="cxTrackBtn" href="track.html">Track Order</a>
+            <a class="btn ghost" id="cxInvoiceBtn" href="invoice.html">Download Invoice</a>
+          </div>
+          <a class="wa-inline" id="cxWaBtn" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm5.5 14.1c-.2.7-1.2 1.3-1.7 1.3-.4.1-1 .1-1.6-.1-.4-.1-.9-.3-1.5-.5-2.6-1.1-4.3-3.7-4.4-3.9-.1-.2-1-1.4-1-2.6s.6-1.8.9-2c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.4l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.6.3.1.2.1.8-.1 1.4z"/></svg>
+            Get updates on WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <aside class="summary">
+        <div class="bento">
+          <h3>Order Summary</h3>
+          <p class="sub-hint" style="margin-bottom:8px">Shipping to</p>
+          <p id="cxShipTo" style="font-size:13.5px;color:var(--taupe);margin-bottom:14px">—</p>
+          <div id="cxLines"></div>
+          <div class="sum-row"><span>Subtotal</span><span id="cxSub">₹0</span></div>
+          <div class="sum-row" hidden><span>Discount</span><span class="free" id="cxDisc">— ₹0</span></div>
+          <div class="sum-row"><span>Shipping</span><span id="cxShip">₹0</span></div>
+          <div class="sum-row gst-row"><span id="cxGst">Incl. GST</span></div>
+          <div class="sum-row total"><span>Total</span><span id="cxTotal">₹0</span></div>
+          <p class="sum-note">Insured shipping · returns within 7 days of delivery · invoice in Your Orders.</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-main">
+    <div class="container fm-grid">
+      <div class="fm-brand">
+        <a class="f-logo-link" href="index.html" aria-label="Amour Jewels — home">
+          <img class="f-logo-mark" src="images/logo-mark.png" alt="Amour crest" width="343" height="363">
+          <img class="f-logo-word" src="images/logo-word.png" alt="Amour Jewels" width="343" height="141">
+        </a>
+        <p>Inspired By The Richness Of Traditional Indian Heritage, Each Piece Makes A Beautiful Choice For Festivities, Weddings, Gifting &amp; Special Occasions.</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="shop.html?cat=hand">Hand Accessories</a></li>
+          <li><a href="shop.html?cat=necklaces">Necklaces | Chokers</a></li>
+          <li><a href="shop.html?cat=earrings">Earrings</a></li>
+          <li><a href="shop.html?cat=bracelets">Bangles | Kadas</a></li>
+          <li><a href="shop.html?cat=hair">Hair Accessories</a></li>
+          <li><a href="shop.html?cat=groom">Groom's Jewellery</a></li>
+          <li><a href="shop.html?cat=brooches">Brooches &amp; Kalangi</a></li>
+          <li><a href="shop.html?cat=diamond">Diamond Jewellery</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Help</h4>
+        <ul>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="https://wa.me/919009055502?text=Hi%20Team%2C%20Help%20Me%20Track%20My%20Order." target="_blank" rel="noopener">Track Your Order</a></li>
+          <li><a href="shipping-policy.html">Shipping Policy</a></li>
+          <li><a href="returns-exchange.html">Returns &amp; Exchange</a></li>
+          <li><a href="jewellery-care.html">Jewellery Care</a></li>
+          <li><a href="privacy-terms.html">Privacy &amp; Terms</a></li>
+          <li><a href="cancellation-policy.html">Cancellation Policy</a></li>
+        </ul>
+      </div>
+      <div class="fm-visit">
+        <h4>Visit the Atelier</h4>
+        <p><b>Amour Jewels Studio</b><br>India<br>Studio visits by appointment</p>
+        <p><b>Mon–Sat</b> · 11 am – 8 pm IST</p>
+        <p><a href="mailto:amourjewelsretail@gmail.com">amourjewelsretail@gmail.com</a><br><a href="tel:+919009055502">+91 9009055502</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-tags">
+    <div class="container ft-inner">
+      <p class="ft-label">Popular Searches</p>
+      <nav class="ft-cloud" aria-label="Popular jewellery searches">
+        <a href="shop.html">Amour Jewels</a>
+        <a href="shop.html">Jewels</a>
+        <a href="shop.html?cat=necklaces">Amour Jewels Necklaces</a>
+        <a href="shop.html?cat=earrings">Amour Jewels Earrings</a>
+        <a href="shop.html?cat=bracelets">Amour Jewels Kadas &amp; Bracelets</a>
+        <a href="shop.html?collection=bridal">Amour Jewels Bridal Jewellery</a>
+        <a href="shop.html?collection=new">Amour Jewels New Arrivals</a>
+        <a href="shop.html">Amour Jewels 92.5 Silver Jewellery</a>
+        <a href="shop.html">Amour Jewels Gold Vermeil Jewels</a>
+        <a href="shop.html">Amour Jewels Polki Jewels</a>
+        <a href="shop.html">Jewels Online India</a>
+        <a href="shop.html">Handcrafted Jewels India</a>
+        <a href="gift-card.html">Amour Jewels Gift Cards</a>
+      </nav>
+      <p class="ft-copy"><b>Amour Jewels</b> — handcrafted <b>jewels</b> in 92.5 silver &amp; 18k gold vermeil: necklaces, earrings, rings, kadas and pearls. Shop <b>Amour Jewels</b> online in India with insured shipping &amp; 7-day exchange.</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container fb-inner">
+      <p>© 2026 Amour Jewels · Handcrafted in India</p>
+      <div class="pay-chips"><span>UPI</span><span>Visa</span><span>Mastercard</span><span>RuPay</span><span>NetBanking</span></div>
+      <div class="fb-links">
+        <a href="privacy-terms.html">Privacy</a>
+          <a href="privacy-terms.html#terms">Terms</a>
+          <a href="shipping-policy.html">Shipping</a>
+          <a href="returns-exchange.html">Returns</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script defer src="js/api.js?v=20261107"></script>
+  <script src="js/products.js?v=20261107" defer></script>
+<script src="js/store-config.js?v=20261107" defer></script>
+<script src="js/analytics.js?v=20261008" defer></script>
+<script src="js/currency.js?v=20261013" defer></script>
+<script src="js/main.js?v=20261107" defer></script>
+<script src="js/shop-dropdown.js?v=20261107" defer></script>
+<script src="js/checkout.js?v=20261107" defer></script>
+</body>
+</html>
+
