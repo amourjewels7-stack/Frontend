@@ -148,7 +148,7 @@
         <div id="cxStep1">
           <h3>Delivery Address</h3>
           <p class="sub-hint">Where should we send your sparkle?</p>
-          <form id="cxAddressForm" novalidate>
+          <form id="cxAddressForm" novalidate onsubmit="return false">
             <div class="f-grid">
               <div class="field full">
                 <label for="cxName">Full name</label>
@@ -197,7 +197,7 @@
         <div id="cxStep2" hidden>
           <h3>Shipping &amp; Payment</h3>
           <p class="sub-hint">Review delivery, add a code if you have one, then pay securely.</p>
-          <form id="cxPayForm" novalidate>
+          <form id="cxPayForm" novalidate onsubmit="return false">
             <p class="opt-label" style="margin:0 0 10px;font-weight:500">Delivery</p>
             <div class="pay-opt" style="cursor:default">
               <b>Standard — insured &amp; tracked</b><span id="cxStdRate">3–6 days · FREE from <span data-store-money="freeShip">₹2,000</span>, otherwise ₹100</span>
