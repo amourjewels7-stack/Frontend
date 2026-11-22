@@ -134,7 +134,10 @@ async function auSubmitEmail() {
   }
   auBusy('pnlEmail', true);
   try {
-    if (AUTH_MODE === 'register') await AmourAuth.signup(auVal('auName'), email, pass);
+    if (AUTH_MODE === 'register') {
+      const mk = document.getElementById('auMarketing');
+      await AmourAuth.signup(auVal('auName'), email, pass, !!(mk && mk.checked));
+    }
     await AmourAuth.login(email, pass);
     await auComplete();
   } catch (e) {

@@ -134,7 +134,8 @@
       if (extra) Object.keys(extra).forEach(function (k) { if (extra[k]) p[k] = extra[k]; });
       writeProfile(p); return p;
     },
-    signup: function (name, email, password) { return api('/api/auth/signup', { method: 'POST', body: { name: name, email: email, password: password }, auth: false }); },
+    /* marketingConsent: the optional, unticked-by-default "email me offers" box. Sent as the strings "true"/"false". */
+    signup: function (name, email, password, marketingConsent) { return api('/api/auth/signup', { method: 'POST', body: { name: name, email: email, password: password, marketingConsent: marketingConsent ? 'true' : 'false' }, auth: false }); },
     login: async function (email, password) {
       var d = await api('/api/auth/login', { method: 'POST', body: { email: email, password: password }, auth: false });
       return Auth.setUser(d.user, 'form');
@@ -173,7 +174,13 @@
     reviews: function (productId, size) { return api('/api/feedback/reviews/product/' + enc(productId) + '?page=0&size=' + (size || 50), { auth: false }); },
     addReview: function (productId, rating, comment) { return api('/api/feedback/reviews', { method: 'POST', body: { productId: productId, rating: rating, comment: comment } }); },
     contact: function (m) { return api('/api/messages', { method: 'POST', body: m, auth: false }); },
-    newsletter: function (email) { return api('/api/newsletter', { method: 'POST', body: { email: email }, auth: false }); },
+    newsletter: function (email, source) { return api('/api/newsletter', { method: 'POST', body: { email: email, source: source || 'footer' }, auth: false }); },
+    /* the confirm / unsubscribe pages: the token comes from the link in the email */
+    newsletterConfirm: function (token) { return api('/api/newsletter/confirm', { method: 'POST', body: { token: token }, auth: false }); },
+    unsubscribe: function (token) { return api('/api/marketing/unsubscribe?t=' + enc(token), { method: 'POST', body: {}, auth: false }); },
+    /* a signed-in customer's own "emails about offers" setting */
+    marketingPrefs: function () { return api('/api/account/marketing'); },
+    setMarketingPrefs: function (on) { return api('/api/account/marketing', { method: 'PUT', body: { marketingConsent: !!on } }); },
     /* cart (signed-in only) */
     cart: function () { return api('/api/cart'); },
     cartAdd: function (item) { return api('/api/cart/items', { method: 'POST', body: item }); },

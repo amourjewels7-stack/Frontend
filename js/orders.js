@@ -181,11 +181,50 @@ function ordDrawAll() {
 }
 window.addEventListener('amour:signedout', () => location.replace('login.html?next=orders.html'));
 
+/* ---------- email preferences: the customer's own switch for offers and reminders ---------- */
+async function initMarketingPrefs() {
+  const btn = document.getElementById('prefBtn');
+  const lede = document.getElementById('prefLede');
+  const state = document.getElementById('prefState');
+  if (!btn || !lede || !state) return;
+  let on = false;
+  const paint = (p) => {
+    on = !!p.marketingConsent;
+    if (!p.hasEmail) {
+      state.textContent = 'No email address on this account';
+      lede.textContent = 'Order updates reach you by SMS. Add an email address to your account to receive our offers.';
+      btn.hidden = true;
+      return;
+    }
+    btn.hidden = false;
+    state.textContent = on ? 'You are subscribed to offers and cart reminders.' : 'You are not subscribed to offers or cart reminders.';
+    btn.textContent = on ? 'Unsubscribe' : 'Subscribe';
+  };
+  try {
+    paint(await AmourAPI.marketingPrefs());
+  } catch (e) {
+    if (e && e.status === 401) return;
+    state.textContent = 'We could not load this setting right now.';
+    btn.hidden = true;
+    return;
+  }
+  btn.addEventListener('click', async () => {
+    btn.disabled = true;
+    try {
+      paint(await AmourAPI.setMarketingPrefs(!on));
+      if (typeof toast === 'function') toast(on ? 'You are subscribed to offers' : 'You are unsubscribed from offers');
+    } catch (e) {
+      if (typeof toast === 'function') toast(e.message || 'Could not update this setting.');
+    } finally { btn.disabled = false; }
+  });
+}
+
 amourReady(async () => {
   if (!AmourAuth.require()) return;          /* not signed in -> sign-in page, back here after */
   const box = document.getElementById('ordList');
   if (box) box.innerHTML = '<div class="ord-empty"><p>Loading your orders…</p></div>';
   renderAddresses();
+  initMarketingPrefs();
   try {
     await loadMyOrders();
     ordDrawAll();

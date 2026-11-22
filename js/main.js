@@ -629,6 +629,11 @@ function initChrome() {
   }));
 
   /* newsletter */
+  const NL_NOTE = 'We’ll email you a link to confirm. Unsubscribe any time.';
+  $$('.nl-form').forEach(f => {
+    const note = f.querySelector('.nl-msg');
+    if (note) { note.hidden = false; note.textContent = NL_NOTE; }     /* what they are signing up for, before they submit */
+  });
   $$('.nl-form').forEach(f => f.addEventListener('submit', e => {
     e.preventDefault();
     const email = f.querySelector('input[type="email"]');
@@ -638,12 +643,12 @@ function initChrome() {
       return;
     }
     const addr = email.value.trim();
-    AmourAPI.newsletter(addr).then(() => {
+    AmourAPI.newsletter(addr, 'footer').then(() => {
       msg.hidden = false;
-      msg.textContent = 'You’re in. Watch your inbox for something sparkly.';
+      msg.textContent = 'Check your inbox — we’ve sent a link to confirm your subscription.';
       msg.style.color = '';
       email.value = '';
-      toast('Welcome to the inner circle');
+      toast('Check your inbox to confirm');
     }).catch(err => {
       msg.hidden = false; msg.textContent = err.message || 'Could not subscribe right now — please try again.'; msg.style.color = 'var(--fail)';
     });
