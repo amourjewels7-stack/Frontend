@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /admin.html
+Disallow: /settings.html
 Disallow: /js/
 
 Sitemap: https://amourjewels.in/sitemap.xml

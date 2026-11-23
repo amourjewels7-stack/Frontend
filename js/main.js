@@ -343,7 +343,8 @@ function acctIcon(name) {
   const paths = {
     orders: '<path d="M6 4h9l3 3v13H6z"/><path d="M9 10h6M9 14h6"/>',
     buy: '<circle cx="12" cy="12" r="8.2"/><path d="M9 12l2 2 4-4"/>',
-    addrs: '<path d="M12 21s-6-5.1-6-9.6A6 6 0 0 1 18 11.4C18 15.9 12 21 12 21z"/><circle cx="12" cy="11" r="2.4"/>'
+    addrs: '<path d="M12 21s-6-5.1-6-9.6A6 6 0 0 1 18 11.4C18 15.9 12 21 12 21z"/><circle cx="12" cy="11" r="2.4"/>',
+    settings: '<path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/>'
   };
   return `<svg viewBox="0 0 24 24" fill="none" stroke-width="1.5">${paths[name] || ''}</svg>`;
 }
@@ -395,6 +396,8 @@ function acctHomeHTML(me) {
       <span class="ac-body"><b>Buy Again</b><span>Reorder favourites &amp; shop new arrivals</span></span><i class="go">›</i></a>
     <button class="acct-card" type="button" data-acct-nav="addrs">${acctIcon('addrs')}
       <span class="ac-body"><b>Addresses</b><span>${addrs.length ? addrs.length + ' saved address' + (addrs.length > 1 ? 'es' : '') : 'Add a delivery address'}</span></span><i class="go">›</i></button>
+    <a class="acct-card" href="settings.html">${acctIcon('settings')}
+      <span class="ac-body"><b>Settings</b><span>Profile, notifications, currency &amp; privacy</span></span><i class="go">›</i></a>
   </div>
   <button class="acct-signout" type="button" data-acct-signout>Sign out</button>`;
 }

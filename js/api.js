@@ -181,6 +181,8 @@
     /* a signed-in customer's own "emails about offers" setting */
     marketingPrefs: function () { return api('/api/account/marketing'); },
     setMarketingPrefs: function (on) { return api('/api/account/marketing', { method: 'PUT', body: { marketingConsent: !!on } }); },
+    /* permanent: deletes the account + saved bag, anonymises past orders (DELETE /api/account/customer) */
+    deleteAccount: function () { return api('/api/account/customer', { method: 'DELETE' }); },
     /* cart (signed-in only) */
     cart: function () { return api('/api/cart'); },
     cartAdd: function (item) { return api('/api/cart/items', { method: 'POST', body: item }); },

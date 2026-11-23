@@ -48,7 +48,7 @@ const api = http.createServer(async (req, res) => {
   /* ---- test hooks ---- */
   if (p === '/__expire') { S.access.clear(); return json(res, 200, { ok: true }); }
   if (p === '/__reset') { reset(); S.tokenUser = {}; return json(res, 200, { ok: true }); }
-  if (p === '/__state') return json(res, 200, { carts: S.carts, orders: S.orders, returns: S.returns, reviews: S.reviews, messages: S.messages, newsletter: S.newsletter, log: S.log, products: S.products.map(x => ({ sku: x.sku, stock: x.stockQuantity })) });
+  if (p === '/__state') return json(res, 200, { carts: S.carts, orders: S.orders, returns: S.returns, reviews: S.reviews, messages: S.messages, newsletter: S.newsletter, log: S.log, deleted: S.deleted || 0, users: Object.values(S.users).length, products: S.products.map(x => ({ sku: x.sku, stock: x.stockQuantity })) });
   if (p === '/__stock') { const pr = S.products.find(x => x.sku === url.searchParams.get('sku')); pr.stockQuantity = +url.searchParams.get('n'); return json(res, 200, { ok: true }); }
   let mm;
   if ((mm = p.match(/^\/__pay\/(.+)$/))) {                                 // simulates the Razorpay webhook
@@ -118,6 +118,14 @@ const api = http.createServer(async (req, res) => {
   const user = sessionUser(req);
   if (!user) return forbidden(req, res);
   const key = subject(user);
+  if (p === '/api/account/marketing' && m === 'GET') return json(res, 200, { marketingConsent: !!user.marketing, hasEmail: !!user.email });
+  if (p === '/api/account/marketing' && m === 'PUT') { user.marketing = !!body.marketingConsent; S.log.push('MARKETING=' + user.marketing); return json(res, 200, { marketingConsent: user.marketing, hasEmail: !!user.email }); }
+  if (p === '/api/account/customer' && m === 'DELETE') {
+    delete S.users[user.id]; delete S.carts[key];
+    S.orders.filter(o => o.userId === key).forEach(o => { o.customerEmail = 'deleted@amourjewels.in'; o.shippingAddress.firstName = 'Deleted'; o.shippingAddress.addressLine1 = 'Data Purged'; });
+    S.access.clear(); S.deleted = (S.deleted || 0) + 1;
+    return json(res, 200, { message: 'Account deleted.' });
+  }
   const cart = () => S.carts[key] || (S.carts[key] = { items: [], totalPrice: 0 });
   const recalc = c => { c.totalPrice = c.items.reduce((n, i) => n + i.price * i.quantity, 0); return c; };
 

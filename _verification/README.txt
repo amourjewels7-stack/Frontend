@@ -1,5 +1,5 @@
-Browser test for the storefront <-> backend integration.
-  1. npm i playwright && npx playwright install chromium
-  2. node mock.js ..            (mock API on :10000, serves the site on :5173)
-  3. node e2e.js                (78 checks)
-The mock mirrors the real controllers' contracts; it is NOT your backend. Use it to re-check the storefront after edits.
+Browser tests (Playwright) against a MOCK of the backend (not your real one).
+  npm i playwright && npx playwright install chromium
+  node mock.js ..          (mock API :10000 + the site on :5173; leave running)
+  node e2e.js              (whole store: 78 checks)
+  node settings-e2e.js     (settings page: 53 checks)
