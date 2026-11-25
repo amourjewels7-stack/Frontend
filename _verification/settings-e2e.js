@@ -74,7 +74,7 @@ const state = async () => (await fetch(API + '/__state')).json();
   ok((await page.locator('#st-notifications .st-chip.ok').textContent()) === 'Always on', 'order updates shown as always on');
   await page.click('#stMkt'); await page.waitForFunction(() => document.getElementById('stMkt').getAttribute('aria-checked') === 'true');
   ok((await state()).log.includes('MARKETING=true'), 'toggle → PUT /api/account/marketing');
-  ok((await page.locator('#stMktDesc').textContent()).includes('occasional offers'), 'description updates');
+  ok((await page.locator('#stMktDesc').textContent()).includes('occasional emails'), 'description updates');
   await page.reload(); await page.waitForSelector('#stMkt:not([disabled])');
   ok(await page.getAttribute('#stMkt', 'aria-checked') === 'true', 'setting survives a reload (read from server)');
   await page.click('#stMkt'); await page.waitForFunction(() => document.getElementById('stMkt').getAttribute('aria-checked') === 'false');

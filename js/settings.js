@@ -148,7 +148,7 @@ function stPreferencesHTML() {
 function stNotificationsHTML() {
   return `
     ${stRow('Order & delivery updates', 'Confirmation, dispatch and delivery messages for orders you place. These are essential, so they can’t be switched off.', '<span class="st-chip ok">Always on</span>')}
-    ${stRow('Offers & cart reminders', '<span id="stMktDesc">Loading…</span>', '<button class="st-switch" type="button" role="switch" aria-checked="false" aria-label="Offers and cart reminders" id="stMkt" disabled></button>')}`;
+    ${stRow('Marketing emails', 'New pieces, offers and reminders about items left in your bag. Every email has an unsubscribe link.<br><b id="stMktDesc" style="font-weight:500;color:var(--espresso)">Loading…</b>', '<button class="st-switch" type="button" role="switch" aria-checked="false" aria-label="Marketing emails" id="stMkt" disabled></button>')}`;
 }
 
 function stPrivacyHTML() {
@@ -224,14 +224,14 @@ async function stInitMarketing() {
       sw.disabled = true; sw.setAttribute('aria-checked', 'false');
       return;
     }
-    desc.textContent = on ? 'You’re getting our occasional offers and reminders about items left in your bag.' : 'Off. You won’t get offers or bag reminders. You can switch this on any time.';
+    desc.textContent = on ? 'On — you’ll get our occasional emails.' : 'Off — we won’t send you offers or bag reminders.';
     sw.setAttribute('aria-checked', String(on)); sw.disabled = false;
   };
   try { paint(await AmourAPI.marketingPrefs()); }
   catch (e) { if (!(e && e.status === 401)) desc.textContent = 'We couldn’t load this setting right now. Please refresh in a moment.'; return; }
   sw.addEventListener('click', async () => {
     sw.disabled = true;
-    try { paint(await AmourAPI.setMarketingPrefs(!on)); toast(on ? 'You’re subscribed to offers' : 'You’re unsubscribed from offers'); }
+    try { paint(await AmourAPI.setMarketingPrefs(!on)); toast(on ? 'Marketing emails are on' : 'Marketing emails are off'); }
     catch (e) { if (!(e && e.status === 401)) toast(e.message || 'Could not update this setting.'); sw.disabled = false; }
   });
 }

@@ -62,6 +62,23 @@ function authMsg(text, kind) {
   el.textContent = text || '';
 }
 
+/* ---------- marketing e-mail consent (register page only) ----------
+   Optional and never pre-ticked. Two boxes exist: one inside the e-mail form, one above the Google button.
+   Only the one the person can see counts. Phone sign-ups have no e-mail address, so they are never asked. */
+function auConsent() {
+  if (AUTH_MODE !== 'register') return false;
+  const emailTab = document.getElementById('pnlEmail') && !document.getElementById('pnlEmail').hidden;
+  const box = document.getElementById(emailTab ? 'auMarketing' : 'auMarketingG');
+  return !!(box && box.checked);
+}
+/* Google: the account is created by the sign-in itself, so the choice is saved right after it.
+   We only ever send "yes" — an unticked box must never overwrite a choice an existing account already made. */
+async function auSaveGoogleConsent() {
+  if (!auConsent()) return;
+  try { await AmourAPI.setMarketingPrefs(true); }
+  catch (e) { if (typeof toast === 'function') toast('Signed in — we couldn’t save your email preference. You can set it in Settings.'); }
+}
+
 /* ---------- gate (forms) vs. signed-in panel ---------- */
 function authRenderState() {
   const gate = document.getElementById('authGate');
@@ -99,6 +116,8 @@ function auSwitchTab(mode) {
   auShow('pnlEmail', mode === 'email');
   auShow('pnlPhone', mode === 'phone');
   auShow('pnlOtp', false);
+  const gc = document.getElementById('auGConsent');
+  if (gc) gc.hidden = (mode === 'email');
   auClearErrs();
   authMsg();
 }
@@ -135,8 +154,7 @@ async function auSubmitEmail() {
   auBusy('pnlEmail', true);
   try {
     if (AUTH_MODE === 'register') {
-      const mk = document.getElementById('auMarketing');
-      await AmourAuth.signup(auVal('auName'), email, pass, !!(mk && mk.checked));
+      await AmourAuth.signup(auVal('auName'), email, pass, auConsent());
     }
     await AmourAuth.login(email, pass);
     await auComplete();
@@ -197,6 +215,7 @@ async function authHandleCredential(resp) {
   authMsg('Signing you in…', 'note');
   try {
     await AmourAuth.google(resp.credential, authDecodePicture(resp.credential));
+    await auSaveGoogleConsent();
     await auComplete();
   } catch (e) {
     authMsg(e.message || 'Google sign-in failed. Please try again.', 'bad');

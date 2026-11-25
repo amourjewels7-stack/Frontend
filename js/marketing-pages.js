@@ -19,7 +19,7 @@
     finish('This link is incomplete', 'Please use the link in your email.',
       mode === 'confirm'
         ? 'You can subscribe again from the form at the bottom of any page.'
-        : 'Open the unsubscribe link from the email again, or manage this setting from Your Orders when signed in.');
+        : 'Open the unsubscribe link from the email again, or switch this off any time from Settings → Notifications when you are signed in.');
     return;
   }
   try { history.replaceState(null, '', location.pathname); } catch (e) { /* the token stays in memory either way */ }
@@ -30,7 +30,7 @@
     var call = mode === 'confirm' ? AmourAPI.newsletterConfirm(token) : AmourAPI.unsubscribe(token);
     call.then(function () {
       if (mode === 'confirm') finish('You are subscribed', 'Thank you.', 'We will send you the occasional note about new pieces and offers. Every email has an unsubscribe link.');
-      else finish('You are unsubscribed', 'It is done.', 'You will no longer receive offers or cart reminders. Order and delivery updates are not affected.');
+      else finish('You are unsubscribed', 'It is done.', 'You will no longer receive offers or cart reminders. Order and delivery updates are not affected. Changed your mind? Switch it back on any time in Settings → Notifications.');
     }).catch(function (e) {
       btn.disabled = false;
       status.className = 'mp-status bad';

@@ -48,7 +48,7 @@ const api = http.createServer(async (req, res) => {
   /* ---- test hooks ---- */
   if (p === '/__expire') { S.access.clear(); return json(res, 200, { ok: true }); }
   if (p === '/__reset') { reset(); S.tokenUser = {}; return json(res, 200, { ok: true }); }
-  if (p === '/__state') return json(res, 200, { carts: S.carts, orders: S.orders, returns: S.returns, reviews: S.reviews, messages: S.messages, newsletter: S.newsletter, log: S.log, deleted: S.deleted || 0, users: Object.values(S.users).length, products: S.products.map(x => ({ sku: x.sku, stock: x.stockQuantity })) });
+  if (p === '/__state') return json(res, 200, { carts: S.carts, orders: S.orders, returns: S.returns, reviews: S.reviews, messages: S.messages, newsletter: S.newsletter, log: S.log, marketing: Object.fromEntries(Object.values(S.users).map(u => [u.email || u.phoneNumber, !!u.marketing])), deleted: S.deleted || 0, users: Object.values(S.users).length, products: S.products.map(x => ({ sku: x.sku, stock: x.stockQuantity })) });
   if (p === '/__stock') { const pr = S.products.find(x => x.sku === url.searchParams.get('sku')); pr.stockQuantity = +url.searchParams.get('n'); return json(res, 200, { ok: true }); }
   let mm;
   if ((mm = p.match(/^\/__pay\/(.+)$/))) {                                 // simulates the Razorpay webhook
@@ -90,7 +90,7 @@ const api = http.createServer(async (req, res) => {
     if (body.password.length < 8 || !/\d/.test(body.password) || !/[a-z]/i.test(body.password)) return json(res, 400, { error: 'Password must contain at least one letter and one digit.' });
     const em = body.email.toLowerCase();
     if (Object.values(S.users).some(u => u.email === em)) return json(res, 400, { error: 'Unable to create an account with these details.' });
-    const u = { id: 'u' + S.seq++, name: body.name, email: em, password: body.password }; S.users[u.id] = u; return json(res, 200, { message: 'User registered successfully!', userId: u.id });
+    const u = { id: 'u' + S.seq++, name: body.name, email: em, password: body.password, marketing: body.marketingConsent === 'true' }; S.users[u.id] = u; S.log.push('SIGNUP_CONSENT=' + u.marketing); return json(res, 200, { message: 'User registered successfully!', userId: u.id });
   }
   if (p === '/api/auth/login' && m === 'POST') {
     const u = Object.values(S.users).find(x => x.email === (body.email || '').toLowerCase() && x.password === body.password);
@@ -106,6 +106,15 @@ const api = http.createServer(async (req, res) => {
     let u = Object.values(S.users).find(x => x.phoneNumber === body.phoneNumber);
     if (!u) { u = { id: 'u' + S.seq++, name: 'Mobile User', phoneNumber: body.phoneNumber }; S.users[u.id] = u; }
     return issueFor(res, u, { message: 'Phone verification successful!', user: userOut(u) });
+  }
+  if (p === '/api/auth/google' && m === 'POST') {
+    const em = String(body.idToken || '').replace(/^gtok-/, '').toLowerCase(); if (!em.includes('@')) return json(res, 401, { error: 'Invalid Google token.' });
+    let u = Object.values(S.users).find(x => x.email === em); if (!u) { u = { id: 'u' + S.seq++, name: 'Google User', email: em, marketing: false }; S.users[u.id] = u; }
+    return issueFor(res, u, { message: 'Google login successful!', user: userOut(u) });
+  }
+  if (p === '/api/marketing/unsubscribe' && m === 'POST') {
+    const em = (url.searchParams.get('t') || '').replace(/^tok-/, ''); const u = Object.values(S.users).find(x => x.email === em);
+    if (!u) return json(res, 400, { error: 'This link is invalid or has expired.' }); u.marketing = false; S.log.push('UNSUB ' + em); return json(res, 200, { message: 'Unsubscribed.' });
   }
   if (p === '/api/auth/refresh' && m === 'POST') {
     const r = cookies(req).refreshToken, uid = r && S.refresh[r];

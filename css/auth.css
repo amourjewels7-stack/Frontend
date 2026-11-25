@@ -139,4 +139,5 @@ body.auth-dark::after{mix-blend-mode:multiply;opacity:.04}   /* paper grain over
 /* — optional marketing consent on the register form — */
 .a-check{display:flex;gap:12px;align-items:flex-start;margin:2px 0 16px;cursor:pointer;font-size:13px;line-height:1.55;color:rgba(14,42,61,.72)}
 .a-check input{flex:none;width:18px;height:18px;margin:2px 0 0;accent-color:var(--espresso);cursor:pointer}
+.a-check[hidden]{display:none}
 .a-check input:focus-visible{outline:2px solid var(--gold-deep);outline-offset:2px}
